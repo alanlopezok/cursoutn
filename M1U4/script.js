@@ -24,3 +24,13 @@ switch(true){
         break;
 
 }
+//ejercicio 2
+const numeros = [12, 45, 67, 89, 23, 56, 91, 34];
+let mayor = numeros[0];
+for (let i = 1; i < numeros.length; i++) {
+    if (numeros[i] > mayor) {
+        mayor = numeros[i];
+    }
+}
+document.write("<br>");
+document.write(`El número mayor es: ${mayor}`);
