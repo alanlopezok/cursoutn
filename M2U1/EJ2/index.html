@@ -3,9 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
 <body>
-    <script src="js/script.js"></script>
+    <textarea name="" id="mensaje" cols="60" rows="10"></textarea>
+    <div>Caracteres: <span id="contador"></span></div>
+<script>
+    var mensaje = document.getElementById('mensaje');
+    var contador = document.getElementById('contador');
+    
+    mensaje.addEventListener('keyup', function(){
+        contador.innerText = mensaje.value.length;
+    
+    })</script>
+
 </body>
 </html>
