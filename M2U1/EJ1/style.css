@@ -1,0 +1,18 @@
+.contenedor{
+    display:flow-root;
+    
+}
+.cuadrado{
+    width: 100px;
+    height: 100px;
+}
+.rojo {
+    background-color: red;
+}
+.azul{
+    background-color: blue;
+}
+.amarillo{
+background-color: yellow;
+}
+
