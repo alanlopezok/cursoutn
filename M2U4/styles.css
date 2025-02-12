@@ -67,7 +67,7 @@ body {
     font-size: 1.2rem;
     font-weight: bold;
     color: black;
-    background-color: yellow;
+    background-color: rgba(207, 6, 6, 0.904);;
     border: none;
     border-radius: 8px;
     cursor: pointer;
@@ -75,7 +75,7 @@ body {
 }
 
 .hero-content button:hover {
-    background-color: orange;
+    background-color: rgb(152, 3, 3);;
 }
 
 /* Diseño Responsive */
@@ -285,3 +285,15 @@ footer{
    
     text-align: center;
 }
+
+
+/* Sección con imagen de fondo */
+.Ubicacion {
+    width: 100%;
+    height: 100vh; /* Ocupa toda la pantalla */
+    background: url('patio.jpg') no-repeat center center/cover; /* Imagen de fondo */
+    display: flex;
+    align-items: center;
+}
+
+
