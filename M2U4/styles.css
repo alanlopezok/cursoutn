@@ -8,7 +8,18 @@
 body {
     font-family: Arial, sans-serif;
 }
+/* Estilo para el logo */
+.logo-header {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 1000; /* Asegúrate de que el logo quede por encima de otros elementos */
+}
 
+.logo-header .logo {
+    width: 120px; /* Ajusta el tamaño del logo según lo necesites */
+    height: auto;
+}
 /* Sección Hero */
 .Hero {
     position: relative;
@@ -102,7 +113,7 @@ body {
     top: 50%;
     left: 0;
     transform: translateY(-50%);
-    background: transparent; /* Fondo completamente transparente */
+    background: transparent; 
     padding: 10px;
     z-index: 1000;
 }
@@ -124,18 +135,18 @@ body {
     color: white;
     text-decoration: none;
     font-size: 1.2rem;
-    border: 2px solid white; /* Borde blanco */
+    border: 2px solid white; 
     border-radius: 8px;
     text-align: center;
     transition: background 0.1s ease-in-out, color 1s ease-in-out;
 }
 
-/* Efecto hover (cuando pasamos el mouse) */
+/* Efecto hover  */
 .side-menu a:hover {
-    background: rgba(255, 255, 255, 0.2); /* Fondo semi-transparente */
+    background: rgba(255, 255, 255, 0.2); 
 }
 
-/* Efecto de click (animación de color rojo) */
+/* Efecto de click */
 .side-menu a:active {
     animation: buttonClick 0.2s ease-in-out;
 }
@@ -311,4 +322,104 @@ footer{
     background-repeat: no-repeat; 
     padding: 40px 0;
     
+}
+
+/*MENU */
+@media (max-width: 768px) {
+    .side-menu {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 75%; /* Menú lateral más angosto */
+        max-width: 280px;
+        height: 100%;
+        background: white;
+        box-shadow: 4px 0 10px rgba(0, 0, 0, 0.2);
+        border-radius: 0 10px 10px 0; /* Bordes redondeados en el lateral */
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        padding-top: 20px;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease-in-out;
+        z-index: 999;
+    }
+
+/* ESTILO MENU */
+.side-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+.side-menu ul li {
+    width: 100%;
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    transition: background 0.3s;
+}
+
+.side-menu ul li:hover {
+    background: rgba(0, 0, 0, 0.05);
+}
+
+.side-menu ul li a {
+    color: #333;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+    display: block;
+    padding-left: 20px;
+}
+}
+/* BOTÓN MENU HAMBURGUESA */
+.menu-toggle {
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    background: red; 
+    color: white;
+    border: none;
+    padding: 12px;
+    cursor: pointer;
+    font-size: 24px;
+    border-radius: 0%;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    display: none;
+    transition: background 0.3s;
+}
+
+.menu-toggle:hover {
+    background: #3700b3;
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+}
+
+/*  MENU ABIERTO */
+.side-menu.open {
+    transform: translateX(0);
+    box-shadow: 8px 0 15px rgba(0, 0, 0, 0.3); /* Sombra más fuerte al abrir */
+}
+
+/*  FONDO OSCURO CUANDO SE ABRE EL MENU */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+    z-index: 998;
+}
+
+.overlay.show {
+    display: block;
 }
