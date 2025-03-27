@@ -44,9 +44,6 @@ app.get('/burgas', function(req,res,next){
 app.get('/ubicacion', function(req,res,next){
   res.send('Hola soy la pagina de Ubicacion.')
 })
-app.get('/reseña', function(req,res,next){
-  res.send('Hola soy la pagina de Reseñas.')
-})
 
 
 
