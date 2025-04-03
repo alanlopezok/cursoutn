@@ -1,4 +1,5 @@
 require('dotenv').config();
+var session = require('express-session');
 
 var createError = require('http-errors');
 var express = require('express');
@@ -10,6 +11,9 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var loginRouter = require('./routes/admin/login');
+var adminRouter = require('./routes/admin/novedades');
+const { secureHeapUsed } = require('crypto');
 
 var app = express();
 
@@ -23,8 +27,34 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+
+app.use(session({
+  secret : ' 12w45qe1qe4q1eq54eq5 ' ,
+  resave : false ,
+  saveUninitialized : true
+}))
+
+secured = async (req, res, next) => {
+  try {
+    // console.log(req.session.id_usuario);
+    if (req.session.id_usuario) {
+      next();
+    } else {
+      res.redirect('/admin/login');
+    }
+  } catch (error) {
+    console.log(error);
+    next(error); // It's a good practice to pass the error to the next error handling middleware
+  }
+};
+
+
+
+
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/admin/login',loginRouter);
+app.use('/admin/novedades',secured,adminRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
