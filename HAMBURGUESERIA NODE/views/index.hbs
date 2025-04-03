@@ -131,22 +131,49 @@
         </section>
 
 
-<section class="Novedades py-5 bg-hamburgueseria-claro" id="Novedades" style="background-color: #FFFACD;">
-    <div class="container d-flex justify-content-center align-items-center flex-wrap gap-3">
-        <ul class="list-unstyled d-flex justify-content-center align-items-center flex-wrap gap-3">
+<section class="row py-4 novedades" id="Novedades" style="background-color: #deff09; padding-top: 2rem; padding-bottom: 2rem;">
+    <div class="col-md-8 offset-md-2 py-3">
+        <h2 style="color: #343a40; margin-bottom: 1.5rem; text-align: center;">Novedades</h2>
+        <ul class="lista-novedades" style="list-style: none; padding-left: 0; display: flex; flex-wrap: wrap; gap: 20px;">
             {{#each novedades}}
-            <li style="width: 18rem;">
-                <div class="card mb-3">
-                    <div class="card-body">
-                        <h5 class="card-title">{{this.titulo}}</h5>
-                        <p class="card-text">{{this.cuerpo}}</p>
-                        <a href="/novedades/{{this.id}}" class="btn btn-primary">Ver más</a>
-                    </div>
+            <li style="width: calc(33.33% - 20px); margin-bottom: 0;">
+                <div style="background-color: #e9ecef; border-radius: 4px; padding: 1rem; height: 100%; display: flex; flex-direction: column; justify-content: space-between;">
+                    <h5 style="color: #333; margin-bottom: 0.5rem;">{{titulo}}</h5>
+                    <p style="color: #555; font-size: 0.9rem; margin-bottom: 0.75rem; flex-grow: 1;">
+                        {{subtitulo}}
+                    </p>
+                    <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#Modal{{@index}}" style="background-color: #007bff; color: #fff; border: none; border-radius: 4px; padding: 0.5rem 1rem; cursor: pointer;">
+                        Ver más
+                    </button>
                 </div>
             </li>
             {{/each}}
         </ul>
     </div>
+
+{{#each novedades}}
+<div class="modal fade" id="Modal{{id}}" tabindex="-1" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">{{titulo}}</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <h2>{{subtitulo}}</h2>
+                <p>{{cuerpo}}</p>
+            </div>
+        </div>
+    </div>
+</div>
+{{/each}}
+
+
+
+
 </section>
 
 
