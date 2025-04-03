@@ -9,6 +9,14 @@ router.get('/', async function(req, res, next) {
 
   });
 });
+/* para destruir variables de session */
+
+router.get('/logout', function(req, res, next) {
+  req.session.destroy(); // destruir
+  res.render('admin/login', {
+    layout: 'admin/layout'
+  });
+});
 router.post('/', async (req, res, next) => {
   try {
     var usuario = req.body.usuario; // flavia
