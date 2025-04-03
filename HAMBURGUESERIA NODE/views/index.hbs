@@ -129,6 +129,27 @@
                 </div>
             </div>
         </section>
+
+
+<section class="Novedades py-5 bg-hamburgueseria-claro" id="Novedades" style="background-color: #FFFACD;">
+    <div class="container d-flex justify-content-center align-items-center flex-wrap gap-3">
+        <ul class="list-unstyled d-flex justify-content-center align-items-center flex-wrap gap-3">
+            {{#each novedades}}
+            <li style="width: 18rem;">
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <h5 class="card-title">{{this.titulo}}</h5>
+                        <p class="card-text">{{this.cuerpo}}</p>
+                        <a href="/novedades/{{this.id}}" class="btn btn-primary">Ver más</a>
+                    </div>
+                </div>
+            </li>
+            {{/each}}
+        </ul>
+    </div>
+</section>
+
+
         
         <section class="Ubicacion" id="Ubicacion" style="overflow: auto; padding: 40px 0;">
             <div class="container">
