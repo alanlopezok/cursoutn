@@ -48,7 +48,10 @@ body {
 /* Contenido del Hero */
 .hero-content {
     position: relative;
-    z-index: 2; /* Para que quede encima del video */
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    color: #fff; 
+   z-index: 2; /* Para que quede encima del video */
 }
 
 /* Capa oscura para mejorar legibilidad */
@@ -62,31 +65,42 @@ body {
 
 /* Estilos del texto */
 .hero-content h1 {
+    font-family: 'Playfair Display', serif;
     font-size: 3rem;
-    font-weight: bold;
+    font-weight: 700;
+    margin-bottom: 10px;
 }
-
 .hero-content p {
-    font-size: 1.5rem;
-    margin-top: 10px;
+    font-size: 1.3rem;
+    font-weight: 600;
 }
 
 /* Botón */
 .hero-content button {
-    margin-top: 20px;
-    padding: 12px 24px;
+    background: #ffcc00;
+    border: none;
+    padding: 15px 30px;
     font-size: 1.2rem;
     font-weight: bold;
-    color: black;
-    background-color: rgba(207, 6, 6, 0.904);;
-    border: none;
-    border-radius: 8px;
+    border-radius: 5px;
     cursor: pointer;
     transition: 0.3s;
 }
+.hero-content .arte {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 2rem; /* Aumentamos el tamaño */
+    font-weight: 700;
+    color: #ffcc00; /* Color dorado para destacar */
+    text-shadow: 2px 2px 10px rgba(255, 204, 0, 0.5);
+}
 
+.hero-content button a {
+    text-decoration: none;
+    color: black;
+}
 .hero-content button:hover {
-    background-color: rgb(152, 3, 3);;
+    background: #ff9900;
 }
 
 /* Diseño Responsive */
@@ -128,27 +142,32 @@ body {
     margin: 10px 0;
 }
 
-/* Estilos de los botones */
+/* Estilos de los botones mejorados */
 .side-menu a {
     display: block;
     padding: 12px 20px;
     color: white;
     text-decoration: none;
     font-size: 1.2rem;
-    border: 2px solid white; 
+    border: 2px solid white;
     border-radius: 8px;
     text-align: center;
-    transition: background 0.1s ease-in-out, color 1s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background: linear-gradient(135deg, rgba(255, 0, 0, 0.6), rgba(255, 140, 0, 0.6));
+    box-shadow: 0 4px 8px rgba(255, 0, 0, 0.4);
 }
 
-/* Efecto hover  */
+/* Efecto hover */
 .side-menu a:hover {
-    background: rgba(255, 255, 255, 0.2); 
+    background: linear-gradient(135deg, rgba(255, 0, 0, 0.9), rgba(255, 140, 0, 0.9));
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(255, 0, 0, 0.5);
 }
 
 /* Efecto de click */
 .side-menu a:active {
-    animation: buttonClick 0.2s ease-in-out;
+    transform: scale(0.95);
+    box-shadow: 0 2px 6px rgba(255, 0, 0, 0.3);
 }
 
 /* Definición de la animación */
@@ -186,15 +205,19 @@ body {
 
 /* Estilo del texto */
 .nosotros-text {
-    color: white; /* Texto en blanco */
-    font-size: 1.5rem;
-    font-weight: bold;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #ffcc00; 
     text-align: right;
-    background: rgba(0, 0, 0, 0.5); /* Fondo oscuro semi-transparente para mejor lectura */
-    padding: 20px;
-    border-radius: 8px;
+    line-height: 1.6;
+    text-shadow: 2px 2px 8px rgba(255, 204, 0, 0.5);
+    border-right: 4px solid #ffcc00;
+    padding: 15px;
+    background: rgba(0, 0, 0, 0.9); 
+    display: inline-block; 
+    border-radius: 8px; 
 }
-
 
 
 
@@ -252,14 +275,31 @@ body {
     object-fit: cover;
     border-radius: 8px;
 }
-
+.novedades {
+    background: url('/images/fondo-burgas.jpg') no-repeat center center;
+    background-size: cover;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+h2.novedades-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem; 
+    font-weight: bold;
+    color: #343a40;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+.visitanos-title {
+    font-family: 'Playfair Display', serif;
+    color: white;
+}
 /* Mejoras en la visibilidad del nombre */
 .card-front h3 {
     position: absolute;
-    bottom: 10px; /* Ajusta la posición sobre la imagen */
+    bottom: 10px; 
     left: 50%;
     transform: translateX(-50%);
-    background: rgba(0, 0, 0, 0.6); /* Fondo semitransparente */
+    background: rgba(0, 0, 0, 0.6);
     color: white;
     padding: 8px 12px;
     font-size: 18px;
@@ -300,14 +340,27 @@ footer{
 
 /* Sección con imagen de fondo */
 .Ubicacion {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
-    height: 100vh; /* Ocupa toda la pantalla */
+    max-width: 100%;
+    overflow: hidden;
+   /* width: 100%;*/
+   /* height: 100vh; /* Ocupa toda la pantalla */
     background: url('/images/patio.jpg') no-repeat center center/cover; /* Imagen de fondo */
     display: flex;
-    align-items: center;
+   /* display: flex;
+    align-items: center;*/
 }
 
-
+#ubicacion iframe {
+    width: 90%;
+    max-width: 600px;
+    height: 300px;
+    border: 0;
+}
 .Mcard {
     max-width: 400px;
     margin: auto;
@@ -322,6 +375,14 @@ footer{
     background-repeat: no-repeat; 
     padding: 40px 0;
     
+}
+.formularioDetrabajo,
+.formularioDetrabajo h2,
+.formularioDetrabajo label,
+.formularioDetrabajo input,
+.formularioDetrabajo button {
+    font-family: 'Playfair Display', serif;
+    color: white;
 }
 
 /*MENU */
@@ -428,3 +489,14 @@ footer{
 
 
 
+.form-control {
+    color: black !important; /* Fuerza el color negro */
+}
+
+.form-control::placeholder {
+    color: gray !important; /* Opcional: cambia el color del placeholder */
+}
+
+.form-control:focus {
+    color: black !important; /* Asegura que siga siendo negro al hacer clic */
+}
